@@ -1,0 +1,118 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --border-radius: 16px;
+  --input-radius: 25px;
+}
+
+.theme-neumorphism {
+  --background: #e0e5ec;
+  --text-color: #333;
+  --primary: #4a76a8;
+  --primary-light: #6d92c4;
+  --accent: #ff6b6b;
+  --shadow-dark: #a3b1c6;
+  --shadow-light: #ffffff;
+}
+
+.theme-dark {
+  --background: #2c3e50;
+  --text-color: #ecf0f1;
+  --primary: #3498db;
+  --primary-light: #5dade2;
+  --accent: #e74c3c;
+  --shadow-dark: #1a252f;
+  --shadow-light: #34495e;
+}
+
+.theme-candy {
+  --background: #fce4ec;
+  --text-color: #880e4f;
+  --primary: #ec407a;
+  --primary-light: #f06292;
+  --accent: #7b1fa2;
+  --shadow-dark: #f8bbd0;
+  --shadow-light: #ffffff;
+}
+
+.theme-minimal {
+  --background: #ffffff;
+  --text-color: #333333;
+  --primary: #000000;
+  --primary-light: #666666;
+  --accent: #999999;
+  --shadow-dark: #e0e0e0;
+  --shadow-light: #ffffff;
+}
+
+.theme-tech {
+  --background: #1a1a1a;
+  --text-color: #00ff00;
+  --primary: #00ff00;
+  --primary-light: #33ff33;
+  --accent: #ff00ff;
+  --shadow-dark: #000000;
+  --shadow-light: #333333;
+}
+
+.theme-retro {
+  --background: #f4d03f;
+  --text-color: #8b4513;
+  --primary: #d35400;
+  --primary-light: #e67e22;
+  --accent: #c0392b;
+  --shadow-dark: #d4ac0d;
+  --shadow-light: #fff5c1;
+}
+
+.theme-nature {
+  --background: #e8f5e9;
+  --text-color: #1b5e20;
+  --primary: #43a047;
+  --primary-light: #66bb6a;
+  --accent: #ff7043;
+  --shadow-dark: #c8e6c9;
+  --shadow-light: #ffffff;
+}
+
+.theme-cyberpunk {
+  --background: #000000;
+  --text-color: #00ffff;
+  --primary: #ff00ff;
+  --primary-light: #ff33ff;
+  --accent: #ffff00;
+  --shadow-dark: #000033;
+  --shadow-light: #330033;
+}
+
+.theme-ocean {
+  --background: #e3f2fd;
+  --text-color: #0d47a1;
+  --primary: #1976d2;
+  --primary-light: #42a5f5;
+  --accent: #ff6f00;
+  --shadow-dark: #bbdefb;
+  --shadow-light: #ffffff;
+}
+
+.theme-accessible {
+  --background: #ffffff;
+  --text-color: #000000;
+  --primary: #0000ee;
+  --primary-light: #551a8b;
+  --accent: #ee0000;
+  --shadow-dark: #cccccc;
+  --shadow-light: #ffffff;
+}

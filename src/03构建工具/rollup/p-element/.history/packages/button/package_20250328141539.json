@@ -1,0 +1,22 @@
+{
+  "name": "@p-element/button",
+  "version": "1.0.0",
+  "description": "A Web Components button component",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "keywords": [
+    "web-components",
+    "button",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@p-element/shared": "^1.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@p-element/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities and styles for P-Element components",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "keywords": [
+    "web-components",
+    "shared",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT"
+}

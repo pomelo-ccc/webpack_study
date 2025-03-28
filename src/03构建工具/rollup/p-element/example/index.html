@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P-Element Button Demo</title>
+  <script src="../dist/index.js"></script>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .button-container {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>基础按钮</h2>
+  <div class="button-container">
+    <p-button>默认按钮</p-button>
+    <p-button type="primary">主要按钮</p-button>
+    <p-button disabled>禁用按钮</p-button>
+  </div>
+
+  <h2>按钮状态</h2>
+  <div class="button-container">
+    <p-button type="primary" disabled>禁用主要按钮</p-button>
+  </div>
+
+  <script>
+    // 确保Web Components已经加载完成
+    window.addEventListener('WebComponentsReady', () => {
+      console.log('Web Components are ready!');
+    });
+  </script>
+</body>
+</html>

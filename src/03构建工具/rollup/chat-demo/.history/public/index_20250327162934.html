@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时聊天室</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>实时聊天室</h1>
+        <div class="status disconnected">正在连接...</div>
+        <div class="messages" id="messages"></div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="输入消息..." autocomplete="off">
+            <button id="sendButton">发送</button>
+        </div>
+    </div>
+    
+    <!-- 添加主题切换脚本 -->
+    <script src="theme.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>

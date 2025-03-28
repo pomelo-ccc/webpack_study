@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES Module Demo</title>
+</head>
+<body>
+    <h1>ES Module Demo</h1>
+    
+    <!-- Since this is in an ESM folder, I'll add a script with type="module" -->
+    <script type="module">
+        // ES modules are automatically in strict mode
+        import { greet } from './module.js';
+        
+        // Using the imported function
+        console.log(greet('World'));
+        
+        // You can also use modern JavaScript features in modules
+        const message = `Current time: ${new Date().toLocaleTimeString()}`;
+        console.log(message);
+    </script>
+</body>
+</html></html>

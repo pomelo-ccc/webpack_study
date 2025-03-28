@@ -1,0 +1,356 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* 拖拽模块的新拟物风格样式 */
+.drag-drop-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .drag-drop-container {
+    flex-direction: row;
+  }
+}
+
+.neomorphic-inset {
+  background: var(--neumorphic-bg, #e0e5ec);
+  border-radius: 15px;
+  box-shadow: 
+    inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.source-container, .target-container {
+  flex: 1;
+  min-height: 180px;
+}
+
+.source-container h3, .target-container h3 {
+  color: #5a6b8c;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.draggable-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.draggable-item {
+  background: var(--neumorphic-bg, #e0e5ec);
+  border-radius: 10px;
+  padding: 12px 15px;
+  cursor: grab;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 
+    5px 5px 10px rgba(163, 177, 198, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.8);
+  user-select: none;
+  position: relative;
+  color: #5a6b8c;
+}
+
+.draggable-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    6px 6px 12px rgba(163, 177, 198, 0.5),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.draggable-item.pressing {
+  box-shadow: 
+    inset 3px 3px 6px rgba(163, 177, 198, 0.5),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+  transform: translateY(0);
+}
+
+.draggable-item.dragging {
+  opacity: 0.5;
+  box-shadow: 
+    8px 8px 16px rgba(163, 177, 198, 0.5),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+.draggable-item.dragged {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: 
+    inset 2px 2px 5px rgba(163, 177, 198, 0.4),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+}
+
+.drop-zone {
+  min-height: 120px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(224, 229, 236, 0.5);
+  box-shadow: 
+    inset 3px 3px 6px rgba(163, 177, 198, 0.4),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.drop-zone.drag-over {
+  box-shadow: 
+    inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+  background: rgba(215, 225, 235, 0.8);
+}
+
+.drop-instruction {
+  color: #8a9bbc;
+  text-align: center;
+  width: 100%;
+  font-style: italic;
+  user-select: none;
+  margin: 0;
+}
+
+.dropped-item {
+  background: var(--neumorphic-bg, #e0e5ec);
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 
+    4px 4px 8px rgba(163, 177, 198, 0.5),
+    -4px -4px 8px rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: appear 0.5s ease forwards;
+  color: #5a6b8c;
+}
+
+.dropped-item.just-dropped {
+  animation: drop-bounce 0.5s ease;
+}
+
+.dropped-item.removing {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.remove-item {
+  margin-left: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #8a9bbc;
+  transition: all 0.2s ease;
+}
+
+.remove-item:hover {
+  background: rgba(255, 150, 150, 0.3);
+  color: #e65c5c;
+  transform: scale(1.1);
+}
+
+.drag-status {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #6a7b9c;
+}
+
+.neomorphic-button-sm {
+  background: var(--neumorphic-bg, #e0e5ec);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 
+    3px 3px 6px rgba(163, 177, 198, 0.5),
+    -3px -3px 6px rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  font-weight: bold;
+  color: #6a7b9c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.neomorphic-button-sm:hover {
+  box-shadow: 
+    2px 2px 4px rgba(163, 177, 198, 0.5),
+    -2px -2px 4px rgba(255, 255, 255, 0.8);
+  color: #5a6b8c;
+}
+
+.neomorphic-button-sm:active {
+  box-shadow: 
+    inset 3px 3px 6px rgba(163, 177, 198, 0.5),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+}
+
+.drag-image {
+  background: var(--neumorphic-bg, #e0e5ec);
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 
+    6px 6px 12px rgba(163, 177, 198, 0.5),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.reset-animation {
+  animation: reset-pulse 0.5s ease;
+}
+
+/* 动画效果 */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drop-bounce {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes reset-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

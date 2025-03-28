@@ -1,0 +1,210 @@
+/* 新拟物风格基础样式 */
+:root {
+  --neumorphic-bg: #e0e5ec;
+  --neumorphic-light: #ffffff;
+  --neumorphic-dark: #a3b1c6;
+  --neumorphic-shadow-distance: 8px;
+  --carousel-height: 450px;
+  --slide-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--neumorphic-bg);
+  color: #333;
+}
+
+.neomorphic-card {
+  background: var(--neumorphic-bg);
+  border-radius: 20px;
+  box-shadow: 
+    var(--neumorphic-shadow-distance) var(--neumorphic-shadow-distance) 
+    calc(var(--neumorphic-shadow-distance) * 2) var(--neumorphic-dark),
+    calc(-1 * var(--neumorphic-shadow-distance)) 
+    calc(-1 * var(--neumorphic-shadow-distance)) 
+    calc(var(--neumorphic-shadow-distance) * 2) var(--neumorphic-light);
+  padding: 25px;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.neomorphic-button {
+  background: var(--neumorphic-bg);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 
+    5px 5px 10px var(--neumorphic-dark),
+    -5px -5px 10px var(--neumorphic-light);
+  padding: 12px 24px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  outline: none;
+}
+
+.neomorphic-button:hover {
+  box-shadow: 
+    4px 4px 8px var(--neumorphic-dark),
+    -4px -4px 8px var(--neumorphic-light);
+  color: #555;
+}
+
+.neomorphic-button:active {
+  box-shadow: 
+    inset 5px 5px 10px var(--neumorphic-dark),
+    inset -5px -5px 10px var(--neumorphic-light);
+  color: #444;
+}
+
+/* 轮播图整体容器 */
+.carousel-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* 轮播图样式 */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: var(--carousel-height);
+  border-radius: 20px;
+  background: var(--neumorphic-bg);
+  box-shadow: 
+    8px 8px 16px var(--neumorphic-dark),
+    -8px -8px 16px var(--neumorphic-light);
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform var(--slide-transition);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  background: var(--neumorphic-bg);
+  /* 移除个别幻灯片的新拟物阴影，避免重叠 */
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* 轮播导航 */
+.carousel-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 12px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--neumorphic-bg);
+  box-shadow: 
+    2px 2px 4px var(--neumorphic-dark),
+    -2px -2px 4px var(--neumorphic-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  transform: scale(1.1);
+}
+
+.indicator.active {
+  box-shadow: 
+    inset 2px 2px 4px var(--neumorphic-dark),
+    inset -2px -2px 4px var(--neumorphic-light);
+  background: #c3d0e6;
+}
+
+/* 模块卡片样式 */
+.carousel-slide .card {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 
+    inset 3px 3px 7px var(--neumorphic-dark),
+    inset -3px -3px 7px var(--neumorphic-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-slide .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    inset 2px 2px 5px var(--neumorphic-dark),
+    inset -2px -2px 5px var(--neumorphic-light),
+    3px 3px 8px var(--neumorphic-dark);
+}
+
+/* 标题样式 */
+h2 {
+  margin-bottom: 20px;
+  color: #4a5b7c;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 2px var(--neumorphic-light),
+               -1px -1px 2px var(--neumorphic-dark);
+  letter-spacing: 1px;
+}
+
+/* 模块描述文本 */
+.module-description {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  :root {
+    --carousel-height: 400px;
+  }
+  
+  .carousel-wrapper {
+    max-width: 95%;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .neomorphic-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 添加进入和离开动画效果 */
+.carousel-slide {
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-slide[style*="translateX(0%)"],
+.carousel-slide[style*="transform: translateX(0%)"] {
+  opacity: 1;
+  transform: scale(1);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMD Demo</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #result {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AMD Module Loading Demo</h1>
+    <div id="result">加载中。。。。。。</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+   <script>
+    require.config({
+        baseUrl: './',
+        paths: {
+            'calculator': './01',
+            'app': './app'            
+        }
+    })
+
+    require(['app'], function(app) {
+        app.init();
+    })
+   </script>
+</body>
+</html>
